@@ -1,0 +1,165 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body{
+
+    margin: 0 0 0 0;
+    min-height: 100vh;
+    background: #c9ced3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(249deg, #12c239, #c471ed, #f64f59);
+    background-size: 600% 600%;
+    animation: animateBackground 10s ease infinite;
+    will-change: background-position; /* Optimización de renderizado */
+}
+
+/*@keyframes animateBackground{
+    0%{
+        background-position: 0% 67%;
+    }
+
+    50%{
+        background-position: 100% 34%;
+    }
+
+    100%{
+        background-position: 0% 67%;
+    }
+}*/
+
+/*Container*/
+
+.container{
+    height: 450px;
+    width: 350px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+}
+
+.container .img-container{
+
+    width: 270px;
+    height: 270px;
+    position: relative;
+    top: -50px;
+    left: 40px;
+}
+
+.container .img-container img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container h2{
+    font-size: 25px;
+    text-align: center;
+    margin: 0;
+}
+
+.container h3{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    margin: 5px 0 0;
+}
+
+/*Barra de progreso*/
+
+.container .progressBar{
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 40px 20px;
+    width: 90%;
+    height: 4px;
+}
+
+.container .progressBar .progress{
+    background: #242323;
+    border-radius: 5px;
+    width: 0%;
+    height: 100%;
+    transition: width 0.1s linear;
+}
+
+.container .progressBar .duracion{
+    position: relative;
+    top: -25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Controles*/
+.container .controles{
+    position: relative;
+    top: -15px;
+    left: 95px;
+    width: 200px;
+}
+
+.container .controles ion-icon{
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 30px;
+}
+
+/*Animaciones*/
+
+.cuadrado{
+    position: absolute;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: animacion 5s linear infinite;
+    animation-delay: calc(1s * var(--i));
+}
+
+.cuadrado:nth-child(1){
+    width: 90px;
+    height: 150px;
+    top: 200px;
+    left: 500px;
+    z-index: 1;
+}
+
+.cuadrado:nth-child(2){
+    width: 150px;
+    height: 80px;
+    bottom: 270px;
+    right: 450px;
+    z-index: 1;
+}
+
+.cuadrado:nth-child(3){
+    width: 100px;
+    height: 100px;
+    bottom: 50px;
+    right: 50%;
+    z-index: -1;
+}
+
+/*@keyframes animacion{
+    0% 100% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}*/
